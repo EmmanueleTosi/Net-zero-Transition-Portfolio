@@ -1,6 +1,6 @@
 # Net-Zero Transition Portfolio
 
-A three-script Python pipeline for ESG-screened portfolio construction, rolling backtesting, performance analysis, and single-page PDF factsheet generation.
+A three-agent Python pipeline for ESG-screened portfolio construction, rolling backtesting, performance analysis, and single-page PDF factsheet generation.
 
 Developed as part of a European Pension Fund — Decarbonisation & Energy Transition project.
 
@@ -33,7 +33,7 @@ portfolio_construction_agent.py
         └── backtest_results.csv
                 │
                 ▼
-portfolio_analysis.py  ◄──  LSEG ESG universe (~14,500 companies)
+portfolio_analysis_agent.py  ◄──  LSEG ESG universe (~14,500 companies)
         │                        (ESG scores, carbon, biodiversity, water)
         │
         │   Phase 1 — Financial Analysis
@@ -67,7 +67,7 @@ Reads the input dataset containing monthly price history, company metadata and L
 
 ---
 
-### `portfolio_analysis.py`
+### `portfolio_analysis_agent.py`
 Reads the optimisation outputs and computes all metrics reported in the factsheets across three sequential internal phases:
 
 **Phase 1 — Financial Analysis**
@@ -112,7 +112,7 @@ pip install pandas numpy scipy cvxpy clarabel scikit-learn yfinance openpyxl rep
 
 ```bash
 python portfolio_construction_agent.py
-python portfolio_analysis.py
+python portfolio_analysis_agent.py
 python reporting_agent.py
 ```
 
