@@ -13,7 +13,7 @@ Two portfolios are constructed from a universe of 40 developed-market companies 
 - **Markowitz Portfolio** — Ledoit-Wolf mean-variance optimisation with concentration constraints (21 holdings, max 10% per issuer, min 0.5%)
 - **Risk Parity Portfolio** — Equal Risk Contribution approach, all 40 companies, no concentration constraints
 
-Both portfolios are benchmarked against the **MSCI EAFE Index** (proxied by the iShares EFA ETF) and compared against the full LSEG ESG universe (~14,500 companies) on sustainability metrics.
+Both portfolios are benchmarked against the **MSCI EAFE Index** (proxied by the iShares EFA ETF) and compared against the full ESG universe on sustainability metrics.
 
 ---
 
@@ -33,7 +33,7 @@ portfolio_construction_agent.py
         └── backtest_results.csv
                 │
                 ▼
-portfolio_analysis_agent.py  ◄──  LSEG ESG universe (~14,500 companies)
+portfolio_analysis_agent.py  ◄──  LSEG ESG universe
         │                        (ESG scores, carbon, biodiversity, water)
         │
         │   Phase 1 — Financial Analysis
@@ -79,7 +79,7 @@ Computes portfolio-level ESG indicators as weighted averages across holdings: LS
 **Phase 3 — Benchmarking**
 Compares the portfolios against two reference points:
 - **MSCI EAFE Index** (EFA ETF) for financial benchmarking — return, risk, and Sharpe ratio comparison
-- **LSEG universe (~14,500 companies)** for ESG, climate and biodiversity benchmarking — portfolio weighted averages vs universe equal-weight averages across all sustainability metrics
+- **LSEG universe** for ESG, climate and biodiversity benchmarking — portfolio weighted averages vs universe equal-weight averages across all sustainability metrics
 
 **Output:** `portfolio_analysis_results.xlsx` (8 sheets: Financial_Metrics, Calendar_Returns, Monthly_Returns, ESG_Metrics, MKW_Holdings, RP_Holdings, Sector_BICS3, Metadata)
 
@@ -124,9 +124,9 @@ Each script depends only on the outputs of the previous one. To update the facts
 
 | Data | Source |
 |---|---|
-| Company prices & financial data | yFinance |
+| Company prices & financial data | LSEG |
 | ESG metrics (portfolio companies) | LSEG |
-| ESG universe (~14,500 companies) | LSEG |
+| ESG universe | LSEG |
 | Benchmark prices | yFinance (EFA ETF) |
 
 ---
