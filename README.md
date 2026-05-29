@@ -124,7 +124,7 @@ Each script depends only on the outputs of the previous one. To update the facts
 
 | Data | Source |
 |---|---|
-| Company prices & financial data | LSEG |
+| Company prices & financial data | yFinance, LSEG |
 | ESG metrics (portfolio companies) | LSEG |
 | ESG universe | LSEG |
 | Benchmark prices | yFinance (EFA ETF) |
